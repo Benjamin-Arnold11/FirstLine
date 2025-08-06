@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% set body_class = "bg-page" %}
+
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+<div class="main-container">
+    <div class="information-area">
+        <h1>Python Basics</h1>
+        <p>Learn the foundations of Python: variables, loops, functions, and more.</p>
+        <a href="/">Explore Python →</a>
+
+        <h1>HTML & CSS</h1>
+        <p>Build your first web page with HTML structure and beautiful CSS styling.</p>
+        <a href="/">Explore Web →</a>
+    </div>
+
+    <div class="form-area">
+        <div class="tabs">
+            <a href="/login" class="tab {% if request.path == '/login' %}active{% endif %}">Log In</a>
+            <a href="/register" class="tab {% if request.path == '/register' %}active{% endif %}">Sign Up</a>
+        </div>
+        <form action="/register" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text">
+            </div>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password">
+            </div>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" id="password" name="confirmation" placeholder=" Confirm Password" type="password">
+            </div>
+            <div class="form-check text-start mt-3">
+            <input class="form-check-input" type="checkbox" id="tos" name="tos" required>
+            <label class="form-check-label">I agree to the <a href="/terms-of-service"> Terms of Service</a></label>
+            </div>
+
+            {% if error %}
+                <div class="error-message">{{ error }}</div>
+            {% endif %}
+
+            <button class="btn btn-primary" type="submit">Register</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
