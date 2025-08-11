@@ -23,3 +23,6 @@ Steps to get the project working:
   3. Run "pip install -r requirements.txt"
   4. Why use a virtual environment? Well, this is so that it is easier to isolate the dependencies, as well as being there to protect your system
   5. Every time you open Visual Studio Code, you will have to retype ".venv\Scripts\Activate", then you can use the project
+
+
+"rename the pages file to templates"
