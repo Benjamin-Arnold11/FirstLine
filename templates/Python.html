@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="Python.css">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>PyScript Code Runner</title>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.7.3/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2025.7.3/core.js"></script>
+</head>
+<body>
+
+    <h1>Hello World</h1>
+    <p>Type your Python code below and click "Run".</p>
+
+    <textarea id="code-input" placeholder="Write your Python code here..."></textarea>
+    <br>
+    <button id="run-btn">Run</button>
+
+    <div id="output"></div>
+
+    <script type="py">
+from pyscript import when
+from js import document
+import sys, io
+
+@when("click", "#run-btn")
+def run_code(event):
+    code = document.getElementById("code-input").value
+
+    # Redirect stdout
+    old_stdout = sys.stdout
+    sys.stdout = io.StringIO()
+
+    try:
+        exec(code)
+        output_text = sys.stdout.getvalue()
+    except Exception as e:
+        output_text = f"Error: {str(e)}"
+
+    # Restore stdout
+    sys.stdout = old_stdout
+
+    # Display output
+    document.getElementById("output").innerText = output_text
+    </script>
+
+</body>
+</html>
