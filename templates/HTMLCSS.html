@@ -1,0 +1,141 @@
+<!-- HTMLCSS.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML & CSS Live Editor</title>
+
+  <!-- CodeMirror CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css" />
+
+  <style>
+    body {
+      background-image: url("wavy_line_pattern_in_dark_background.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      color: #fff;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: Calibri, sans-serif;
+      font-size: 275%;
+      color: #8e7cc3;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .left-panel {
+      flex: 1;
+      font-size: 120%;
+      line-height: 1.5;
+      max-width: 40%;
+    }
+
+    .right-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* CodeMirror editor box */
+    .CodeMirror {
+      height: 250px;
+      border: 2px solid #595959;
+      background-color: #2e2e2e;
+      color: #fff;
+      font-size: 110%;
+    }
+
+    /* Live preview */
+    #preview {
+      flex: 1;
+      border: 2px solid #595959;
+      background-color: #fff;
+      color: #000;
+      min-height: 250px;
+    }
+
+    button {
+      align-self: flex-start;
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      background: #8e7cc3;
+      color: white;
+      border: none;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Try HTML & CSS</h1>
+
+  <div class="container">
+    <!-- Left side: instructions -->
+    <div class="left-panel">
+      <p>
+        Just like Python has <b>print()</b>, in HTML we use <b>tags</b> to display things.<br><br>
+        Example:  
+        <code>&lt;h1&gt;Hello World&lt;/h1&gt;</code><br><br>
+        You can also add CSS inside a <code>&lt;style&gt;</code> tag:<br>
+        <code>
+        &lt;style&gt;<br>
+        h1 { color: purple; text-align: center; }<br>
+        &lt;/style&gt;
+        </code><br><br>
+        Try typing some HTML and CSS in the editor, then click <b>Run</b>!
+      </p>
+    </div>
+
+    <!-- Right side: editor + preview -->
+    <div class="right-panel">
+      <textarea id="code-input"><h1>Hello World</h1>
+<style>
+  h1 { color: purple; text-align: center; }
+</style></textarea>
+      <button id="run-btn">Run</button>
+      <iframe id="preview"></iframe>
+    </div>
+  </div>
+
+  <!-- CodeMirror JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/xml/xml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/javascript/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/css/css.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/htmlmixed/htmlmixed.min.js"></script>
+
+  <script>
+    // Turn the textarea into a CodeMirror editor
+    const editor = CodeMirror.fromTextArea(document.getElementById("code-input"), {
+      mode: "htmlmixed",
+      theme: "default",
+      lineNumbers: true,
+      tabSize: 2
+    });
+
+    // Run button updates preview iframe
+    document.getElementById("run-btn").addEventListener("click", () => {
+      const previewFrame = document.getElementById("preview");
+      const previewDoc = previewFrame.contentDocument || previewFrame.contentWindow.document;
+      previewDoc.open();
+      previewDoc.write(editor.getValue());
+      previewDoc.close();
+    });
+
+    // Run once at load
+    document.getElementById("run-btn").click();
+  </script>
+</body>
+</html>
