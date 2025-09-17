@@ -22,6 +22,8 @@ nav .navbar-brand .black
     justify-content: center; /*Puts text in the middle of the page*/
 }
 
+
+
 /*Login page and Sign Up page customisation*/
 
 .bg-page {
@@ -95,7 +97,7 @@ form input[type="password"] {
     padding: 0.8rem;
     margin: 0.5rem 0;
     background: #ffffff;
-    color: #fff;
+    color: #000000;
     border: none;
     border-radius: 0.5rem;
 }
