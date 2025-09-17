@@ -4,13 +4,10 @@ from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from helpers import apology, login_required, lookup, usd
+from helpers import login_required
 
 # Configure application
 app = Flask(__name__)
-
-# Custom filter
-app.jinja_env.filters["usd"] = usd
 
 # Configure session to use filesystem (instead of signed cookies)
 app.config["SESSION_PERMANENT"] = False
@@ -34,7 +31,7 @@ def after_request(response):
 @login_required
 def homemain():
     """displays a home page that the user can chose a course of their choice in"""
-    return apology("TODO")
+    return render_template("home.html")
 
 @app.route("/home")
 def homeinfo():
@@ -54,7 +51,7 @@ def login():
         password = request.form.get("password")
         # Ensure username was submitted
         if not username:
-            return render_template("login.html", error="Must provide username")
+            return render_template("login.html", error="Must provide Username")
 
         # Ensure password was submitted
         elif not password:
@@ -86,16 +83,33 @@ def register():
         username = request.form.get("username")
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
+        tos = request.form.get("tos")
+        if not username or not password or not confirmation:
+            return render_template("register.html", error="All fields must be filled")
+
         if password != confirmation:
-            return render_template("login.html", error="Passwords do not match")
+            return render_template("register.html", error="Passwords do not match")
+        
+        if not tos:
+            return render_template("register.html", error="Must agree to Terms of service")
         hash = generate_password_hash(password)
         try:
             #INSERT INTO table_name (column1, column2, column3, ...) VALUES (value1, value2, value3, ...);
             new_user = db2.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
         except:
-            return render_template("login.html", error="Username already exists")
+            return render_template("register.html", error="Username already exists")
         session["user_id"] = new_user
         return redirect("/")
+
+@app.route("/profile")
+@login_required
+def profile():
+    return render_template("profile.html")
+
+@app.route("/Python")
+@login_required
+def python():
+    return render_template("Python.html")
 
 @app.route("/logout")
 def logout():
