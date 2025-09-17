@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% set body_class = "bg-page" %}
+
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <h1 class="home-welcome-text">Welcome :)</h1>
+    <div class="container">
+        <div class="card" href="python">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python">
+        <p>Introduction to Programming<br>-Python</p>
+        </div>
+        <div class="card" href="/HTML">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg" alt="HTML CSS">
+        <p>Introduction to Programming<br>-HTML &amp; CSS</p>
+        </div>
+        <div class="card">
+        <p>Coming Soon<br>5-10 Skyblock Business days</p>
+        </div>
+    </div>
+{% endblock %}
