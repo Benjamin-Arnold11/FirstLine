@@ -18,8 +18,5 @@ Steps to get the project working:
 
 Windows:
 Steps to get the project working:
-  1. Run "python3 -m venv .venv" in the Visual Studio Code terminal inside the folder with the project
-  2. Run ".venv\Scripts\Activate" to get the environment active
-  3. Run "pip install -r requirements.txt"
-  4. Why use a virtual environment? Well, this is so that it is easier to isolate the dependencies, as well as being there to protect your system
-  5. Every time you open Visual Studio Code, you will have to retype ".venv\Scripts\Activate", then you can use the project
+  1. Run "pip install -r requirements.txt"
+  2. then flask aswell as the other dependencies should run perectly
