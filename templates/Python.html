@@ -1,3 +1,4 @@
+<!--Python.html-->
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="Python.css">
@@ -11,13 +12,31 @@
 <body>
 
     <h1>Hello World</h1>
-    <p>Type your Python code below and click "Run".</p>
 
-    <textarea id="code-input" placeholder="Write your Python code here..."></textarea>
-    <br>
-    <button id="run-btn">Run</button>
+    <div class="container">
+        <!-- Left side: instructions -->
+        <div class="left-panel">
+            <p class="Info_Text">
+                The first thing to learn about python is the<br>
+                famous “Hello World”. To do this type in<br>
+                <b>print</b> followed by brackets.<br><br>
+                In these brackets you must put quotation marks to<br>
+                signify that you are outputting text.<br><br>
+                In the quotation marks put the text, in our case<br>
+                <b>Hello World</b>. Also remember that in python<br>
+                capitalisation matters!<br><br>
+                Try it out on the right<br>
+                <b>print("Hello World")</b>, then click Run.
+            </p>
+        </div>
 
-    <div id="output"></div>
+        <!-- Right side: input/output -->
+        <div class="right-panel">
+            <textarea id="code-input" placeholder="Write your Python code here..."></textarea>
+            <button id="run-btn">Run</button>
+            <div id="output"></div>
+        </div>
+    </div>
 
     <script type="py">
 from pyscript import when
