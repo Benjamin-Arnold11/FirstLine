@@ -23,6 +23,91 @@ nav .navbar-brand .black
 }
 
 
+/*Home page customisation*/
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.home-welcome-title {
+    font-size: 48px;
+    font-weight: 300;
+    color: #8b7dff;
+    letter-spacing: 2px;
+}
+
+.home-cards-wrapper {
+    background: rgba(60, 60, 60, 0.3);
+    border-radius: 40px;
+    padding: 50px 60px;
+    backdrop-filter: blur(10px);
+}
+
+.home-cards-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.home-card {
+    width: 200px;
+    height: 200px;
+    background: rgba(80, 80, 80, 0.4);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 25px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.home-card:hover {
+    background: rgba(100, 100, 100, 0.5);
+    transform: translateY(-5px);
+}
+
+.home-card-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    background: #2ea043;
+    color: white;
+}
+
+.home-card-title {
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.home-coming-soon-card {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.home-coming-soon-card:hover {
+    background: rgba(80, 80, 80, 0.4);
+    transform: none;
+}
+
+.home-coming-soon-card .home-card-title {
+    font-size: 16px;
+    color: #c0e0ff;
+}
 
 /*Login page and Sign Up page customisation*/
 
