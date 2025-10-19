@@ -33,10 +33,10 @@ def homemain():
     """displays a home page that the user can chose a course of their choice in"""
     return render_template("home.html")
 
-@app.route("/home")
+@app.route("/information")
 def homeinfo():
     """provides information that can help users chose the products that we can offer"""
-    return render_template("homepage.html")
+    return render_template("information.html")
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -106,9 +106,14 @@ def register():
 def profile():
     return render_template("profile.html")
 
-@app.route("/Python")
+@app.route("/python")
 @login_required
 def python():
+    return render_template("Python.html")
+
+@app.route("/html")
+@login_required
+def html():
     return render_template("Python.html")
 
 @app.route("/logout")
@@ -121,3 +126,7 @@ def logout():
     # Redirect user to login form
     return redirect("/")
 
+@app.route("/tos")
+def tos():
+    """Terms of service"""
+    return render_template("tos.html")
