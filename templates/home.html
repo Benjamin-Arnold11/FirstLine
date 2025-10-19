@@ -7,18 +7,26 @@
 {% endblock %}
 
 {% block main %}
-    <h1 class="home-welcome-text">Welcome :)</h1>
-    <div class="container">
-        <div class="card" href="python">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python">
-        <p>Introduction to Programming<br>-Python</p>
-        </div>
-        <div class="card" href="/HTML">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg" alt="HTML CSS">
-        <p>Introduction to Programming<br>-HTML &amp; CSS</p>
-        </div>
-        <div class="card">
-        <p>Coming Soon<br>5-10 Skyblock Business days</p>
+    <div class="home-container">
+        <h1 class="welcome-title">Welcome :)</h1>
+                <div class="home-cards-wrapper">
+            <div class="home-cards-container">
+                <div class="home-card">
+                    <a href="/python">
+                        <div class="home-card-icon">🐍</div>
+                        <div class="home-card-title">Introduction to Programming<br>-Python</div>
+                    </a>
+                </div>
+                <div class="home-card">
+                    <a class= nav-link href="/html">
+                        <div class="home-card-icon"></div>
+                        <div class="home-card-title">Introduction to Programming<br>-HTML & CSS</div>
+                    </a>
+                </div>
+                <div class="home-card home-coming-soon-card">
+                    <div class="home-card-title">Coming Soon<br>5-10 Skyblock<br>Business days</div>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}
