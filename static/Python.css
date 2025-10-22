@@ -67,7 +67,7 @@ body {
   background-repeat: no-repeat;
 }
 
-/* Sidebar styling */
+/* ===== Collapsible Sidebar ===== */
 .sidebar {
   width: 220px;
   background-color: #2e2e2e;
@@ -77,13 +77,43 @@ body {
   gap: 10px;
   min-height: 100vh;
   box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+  transition: width 0.3s ease;
+  overflow: hidden;
 }
 
-.sidebar h2 {
+.sidebar.collapsed {
+  width: 70px;
+}
+
+.sidebar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: #b5a7e0;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.sidebar-title {
   color: #b5a7e0;
   font-size: 22px;
   text-align: center;
-  margin-bottom: 20px;
+  margin: 0 auto;
+  transition: opacity 0.3s;
+}
+
+/* Hide text when collapsed */
+.sidebar.collapsed .sidebar-title,
+.sidebar.collapsed h2,
+.sidebar.collapsed .nav-btn {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* Sidebar buttons */
@@ -96,7 +126,7 @@ body {
   cursor: pointer;
   font-size: 16px;
   border-radius: 6px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, opacity 0.3s;
 }
 
 .nav-btn:hover {
@@ -105,6 +135,17 @@ body {
 
 .nav-btn.active {
   background-color: #8e7cc3;
+}
+
+/* When sidebar is collapsed, shift main content */
+.sidebar.collapsed ~ .main-content {
+  margin-left: 70px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  transition: margin-left 0.3s;
 }
 
 /* Main content */
