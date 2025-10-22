@@ -24,21 +24,26 @@
     </div>
     </header>
 
+    <!-- Collapsible Sidebar -->
+    <div class="sidebar collapsed" id="sidebar">
+    <div class="sidebar-top">
+        <button id="toggle-btn" class="toggle-btn">☰</button>
+        <h2 class="sidebar-title">Python</h2>
+    </div>
 
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <h2>Python</h2>
-    <button class="nav-btn active" data-section="intro">Introduction</button>
-    <button class="nav-btn" data-section="hello">Hello World</button>
-    <button class="nav-btn" data-section="comments">Comments</button>
-    <button class="nav-btn" data-section="variables">Variables</button>
-    <button class="nav-btn" data-section="integers">Integers</button>
-    <button class="nav-btn" data-section="decimals">Decimals</button>
-    <button class="nav-btn" data-section="strings">Strings</button>
-    <button class="nav-btn" data-section="loops">Loops</button>
-    <button class="nav-btn" data-section="forloop">For Loop</button>
-    <button class="nav-btn" data-section="whileloop">While Loop</button>
-  </div>
+    <div class="sidebar-buttons">
+        <button class="nav-btn active" data-section="intro">Introduction</button>
+        <button class="nav-btn" data-section="hello">Hello World</button>
+        <button class="nav-btn" data-section="comments">Comments</button>
+        <button class="nav-btn" data-section="variables">Variables</button>
+        <button class="nav-btn" data-section="integers">Integers</button>
+        <button class="nav-btn" data-section="decimals">Decimals</button>
+        <button class="nav-btn" data-section="strings">Strings</button>
+        <button class="nav-btn" data-section="loops">Loops</button>
+        <button class="nav-btn" data-section="forloop">For Loop</button>
+        <button class="nav-btn" data-section="whileloop">While Loop</button>
+    </div>
+    </div>
 
   <!-- Main Content -->
   <div class="main-content">
@@ -106,5 +111,7 @@ def run_code(event):
     });
   </script>
 
+  <!-- Collapsible sidebar script -->
+  <script src="Python.js"></script>
 </body>
 </html>
