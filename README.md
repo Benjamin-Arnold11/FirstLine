@@ -19,4 +19,4 @@ Steps to get the project working:
 Windows:
 Steps to get the project working:
   1. Run "pip install -r requirements.txt"
-  2. then flask aswell as the other dependencies should run perectly
+  2. Run "python -m flask run"
