@@ -3,24 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PyScript Code Runner</title>
+  <title>Python</title>
 
-  <link rel="stylesheet" href="Python.css">
+  <link rel="stylesheet" href="/static/Python.css">
   <link rel="stylesheet" href="https://pyscript.net/releases/2025.7.3/core.css" />
   <script type="module" src="https://pyscript.net/releases/2025.7.3/core.js"></script>
+  <link href="/static/logo.png" rel="icon">
+  
 </head>
 <body>
-
     <!-- Header Bar -->
     <header class="top-header">
     <div class="header-left">
-        <img src="Logo.png" alt="FirstLine Logo" class="logo">
-        <span class="brand-name">FirstLine</span>
+        <img src="/static/Logo.png" alt="FirstLine Logo" class="logo">
+        <a href="/"><span class="brand-name">FirstLine</span></a>
     </div>
     <div class="header-right">
-        <a href="#">Home</a> |
-        <a href="#">Courses</a> |
-        <a href="#">View Profile</a>
+        <a href="/information">Home</a>
+        <a>|</a>
+        <a href="/">Courses</a> 
+        <a>|</a>
+        <a href="/profile">View Profile</a>
     </div>
     </header>
 
@@ -112,8 +115,6 @@ def run_code(event):
   </script>
 
   <!-- Collapsible sidebar + section handling -->
-  <script src="Python.js"></script>
+  <script src="/static/Python.js"></script>
 </body>
 </html>
-
-
